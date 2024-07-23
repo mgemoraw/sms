@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Scene xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DashboardController">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #e0ffe0;">
+      <children>
+         <TableView fx:id="studentTable" layoutX="123.0" layoutY="170.0" prefHeight="200.0" prefWidth="690.0">
+           <columns>
+             <TableColumn prefWidth="75.0" text="C1" />
+             <TableColumn prefWidth="75.0" text="C2" />
+               <TableColumn prefWidth="75.0" text="C3" />
+           </columns>
+         </TableView>
+         <HBox layoutX="122.0">
+            <children>
+               <Pane prefHeight="61.0" prefWidth="208.0" style="-fx-background-color: #ffaabb;">
+                  <children>
+                     <Label layoutX="26.0" layoutY="22.0" text="Students">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="28.0" layoutY="55.0" text="800">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane style="-fx-background-color: #aaffaa;">
+                  <children>
+                     <Label layoutX="26.0" layoutY="22.0" prefHeight="30.0" prefWidth="163.0" text="Teachers">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="28.0" layoutY="55.0" text="15">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <Pane prefHeight="85.0" prefWidth="157.0" style="-fx-background-color: #ffaaff;">
+                  <children>
+                     <Label layoutX="26.0" layoutY="22.0" prefHeight="30.0" prefWidth="151.0" text="Classrooms">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="28.0" layoutY="55.0" text="10">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+            </children>
+         </HBox>
+         <HBox layoutX="77.0" layoutY="34.0" />
+         <VBox fx:id="leftAppbar" layoutX="-1.0" layoutY="-1.0" prefHeight="476.0" prefWidth="123.0" style="-fx-background-color: green;">
+            <children>
+               <Button fx:id="dashboardBtn" mnemonicParsing="false" onAction="#openDashboard" prefHeight="44.0" prefWidth="133.0" text="Dashboard" textFill="#ae1717">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Button>
+               <Button fx:id="studentsDashboard" mnemonicParsing="false" onAction="#openStudentsDashboard" prefHeight="44.0" prefWidth="131.0" text="Students" textFill="#ae1717">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Button>
+               <Button fx:id="classroomBtn" mnemonicParsing="false" onAction="#openClassroomDashboard" prefHeight="44.0" prefWidth="130.0" text="Classrooms" textFill="#ae1717">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Button>
+               <Button fx:id="teachersBtn" mnemonicParsing="false" onAction="#openTeachersDashboard" prefHeight="44.0" prefWidth="135.0" text="Teachers" textFill="#ae1717">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Button>
+               <Button fx:id="otherStaffBtn" mnemonicParsing="false" onAction="#openOtherStaffDashboard" prefHeight="44.0" prefWidth="128.0" text="Other Staff" textFill="#ae1717">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Button>
+               <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#logout" prefHeight="44.0" prefWidth="128.0" text="Logout" textFill="#ae1717">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Button>
+            </children>
+         </VBox>
+         <TextField fx:id="studentSearchField" layoutX="125.0" layoutY="124.0" onAction="#searchStudent" prefHeight="44.0" prefWidth="383.0" promptText="Search student here">
+            <contextMenu>
+               <ContextMenu>
+                 <items>
+                   <MenuItem mnemonicParsing="false" text="Search" />
+                 </items>
+               </ContextMenu>
+            </contextMenu>
+            <font>
+               <Font size="20.0" />
+            </font>
+         </TextField>
+         <Button fx:id="addStudentBtn" layoutX="506.0" layoutY="124.0" mnemonicParsing="false" onAction="#addNewStudent" prefHeight="44.0" prefWidth="201.0" text="Add Student" textFill="#ae1717">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Button>
+         <BarChart layoutX="125.0" layoutY="384.0" prefHeight="206.0" prefWidth="376.0">
+           <xAxis>
+             <CategoryAxis side="BOTTOM" />
+           </xAxis>
+           <yAxis>
+             <NumberAxis side="LEFT" />
+           </yAxis>
+         </BarChart>
+         <PieChart layoutX="498.0" layoutY="380.0" prefHeight="190.0" prefWidth="319.0" />
+      </children></AnchorPane>
+</Scene>
